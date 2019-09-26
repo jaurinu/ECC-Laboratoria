@@ -70,6 +70,9 @@ Entra a https://developer.apple.com/documentation/ y contesta:
    Es un framework para diseñar páginas web
 
 2. Lee todos los kits de desarrollo de Apple y enlista 3 que te hayan llamado la atención
+ HomeKit-para comunicarse, configurar y controlar la automatización de los accesorios de la casa.
+ HealthKit- para acceder y compartir datos de salud manteniendo la privacía del usuario.
+ ClassKit- permite a los profesores asignar actividades desde el contenido de tu app y revisar el progreso del estudiante.
 
 Entra a https://developer.apple.com/swift/ y contesta:
 
@@ -84,8 +87,6 @@ Entra a https://developer.apple.com/swift/ y contesta:
 3. Lee todas las secciones de esta página y describe lo que más captó tu atención.
 
    Que es open source, no se utilizan punto y coma
-
-   
 
 Si tienes Mac, descarga de la aplicación de Libros los primeros tres links del repositorio **StartHere** del curso.
 
