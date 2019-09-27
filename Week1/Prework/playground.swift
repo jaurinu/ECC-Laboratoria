@@ -141,14 +141,189 @@ switch vegetable {
 ///tmp/2F72259C-9DC1-484E-A425-572C7AEB2541.BH8tsH/main.swift:138:5: error: 'default' label in a 'switch' should have at least one executable statement
 //   default:
 
-//for-in
+//for-in to iterate over items in a dicionary
+
+let interestingNumbers = [
+    "Prime": [2, 3, 5, 7, 11, 13],
+    "Fibonacci": [1, 1, 2, 3, 5, 8],
+    "Square": [1, 4, 9, 16, 25],
+]
+var largest = 0
+for (kind, numbers) in interestingNumbers {
+    print(kind)
+    for number in numbers {
+        if number > largest {
+            largest = number
+            //var kindOf = (kind, largest)
+            //print(kindOf)
+            //print(kind, largest)
+            //print(largest)
+        }
+    }
+}
+print(largest)
+
+//While to repeat a block of code until a condition changes
+var n = 2
+while n < 100 {
+    n *= 2
+}
+print(n) 
+
+var m = 2
+repeat {
+    m *= 2
+}while m < 100
+print(m)
+
+//to keep an index in a loop use ..< to make a range of indexes
+
+var total = 0
+for i in 0..<4 {
+    total += i
+    print(i, total)
+}
+print(total)
+
+//..< to make a range that omits its upper value
+//...< to make a range that includes both values
+
+//........................................
+//        ENUMERATIONS AND STRUCTURES
+//........................................
+
+//enum to create a enumeration. enumerations can have methods associtaed with them
+
+enum Rank: Int {
+    case ace = 1
+    case two, three, four, five, six, seven, eight, nine, ten
+    case jack, queen, king
+
+    func simpleDescription() -> String {
+        switch self {
+        case .ace:
+            return "ace"
+        case .jack:
+            return "jack"
+        case .queen:
+            return "queen"
+        case .king:
+            return "king"
+        default:
+            return String(self.rawValue)
+        }
+    }
+}
+
+//Experiment Write a function that compares two Rank values by comparing their raw values.
+
+let five = Rank.five
+let four = Rank.four
+
+func compareSomeValues(rank1: Rank, rank2: Rank) -> Rank {
+      var biggest = rank2
+    if rank1.rawValue > rank2.rawValue{
+        print(rank1.rawValue)
+      biggest = rank1
+    }
+       return (biggest)
+}
+let compareValues = compareSomeValues(rank1:five, rank2:four)
+print(compareValues)
+
+//By default, Swift assigns the raw value starting at zero and incrementing by one
+//each time, this behavior can be changed.
+//Use the rawVallue property to access the raw value of an enumeration case
+//init?(rawValue:) initializer to make an instance of an enumeration from a raw value
+
+if let convertedRank = Rank(rawValue: 3) {
+    let threeDescription = convertedRank.simpleDescription()
+print(threeDescription)
+}
+
+
+//The case values of an enumeration are actual values
+
+//Experiment Add a color() method to Suit that returns “black” for spades and clubs, and returns “red” for hearts and diamonds.
+enum Suit {
+    case spades, hearts, diamonds, clubs
+
+    func simpleDescriptionSuit() -> String {
+        switch self {
+        case .spades:
+            return "spades"
+        case .hearts:
+            return "hearts"
+        case .diamonds:
+            return "diamonds"
+        case .clubs:
+            return "clubs"
+        default:
+            fatalError("Unsupported")
+        }   
+    }
+    func color() -> String {
+        switch self {
+        case .spades:
+            return "black"
+        case .hearts:
+            return "black"
+        case .diamonds:
+            return "red"
+        case .clubs:
+            return "red"
+        default:
+            fatalError("Unsupported")
+        }
+        
+    }
+}
+let hearts = Suit.hearts
+let heartsDescription = hearts.simpleDescriptionSuit()
+let heartsColor = hearts.color()
+print(heartsDescription)
+print(heartsColor)
+
+//requesting the sunrise and sunset times from a server.
+
+enum ServerResponse {
+    case result(String, String)
+    case failure(String)
+}
+
+let success = ServerResponse.result("6:00 am", "8:09 pm")
+let failure = ServerResponse.failure("Out of cheese.")
+
+switch success {
+case let .result(sunrise, sunset):
+    print("Sunrise is at \(sunrise) and sunset is at \(sunset).")
+case let .failure(message):
+    print("Failure... \(message)")
+default:
+    fatalError("Unsupported")
+}
+
+//Experiment Add a third case to ServerResponse and to the switch.
+
+//??????????????????????????????
+
+//STRUCT to create a structure. Structures support many of the behaviors as classes,
+//including methods and initializers. One of the most important differences between 
+//structures and classes is that structures are always copied when they are passed 
+//around in your code, but classes are passed by reference.
+
+//struct Card {
+//    var rank: Rank
+//    var suit: Suit
+//    func simpleDescription() -> String {
+//        return "The \(rank.simpleDescription()) of \(suit.simpleDescription())"
+//    }
+//}
+//let threeOfSpades = Card(rank: .three, suit: .spades)
+//let threeOfSpadesDescription = threeOfSpades.simpleDescription()
+//print(threeOfSpades)
 
 
 
-
-
-
-
-
-
-
+//Experiment Write a function that returns an array containing a full deck 
+//of cards, with one card of each combination of rank and suit.
