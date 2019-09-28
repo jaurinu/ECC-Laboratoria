@@ -1,48 +1,92 @@
 import UIKit
 
-let rock = "👊"
-let paper = "✋"
-let scissors = "✌️"
+    let rock = "👊"
+    let paper = "✋"
+    let scissors = "✌️"
 
-//gameState
-enum GameState: String {
-    case start, lose, win, draw
-    func stateOfGame() -> String {
+enum GameState {
+    case win, lose, draw
+
+    var stateOfGame: String {
         switch self {
-        case .lose:
-            return "perdiste :("
         case .win:
-            return "ganaste :D"
+            return "You win"
+        case .lose:
+            return "You loose"
         case .draw:
-            return "empate :o"
+            return "You draw"
         default:
-            return "start game"
+            fatalError("Unsupported")
         }
+        
     }
-
+}
 
 enum Sign {
     case rock, paper, scissors
-    var chosen: String {
+    var description: String {
         switch self {
         case .rock:
-            return "You win"
+            return "rock"
         case .paper:
-            return "You loose"
+            return "paper"
         case .scissors:
-            return "Draw"
+            return "scissors"
         default:
-            return "Let's do it"
+            fatalError("Unsupported")
         }
     }
-
-    func giveMeOneOption(user: Sign computer: Sign) -> GameState {
+    func giveMeAnOption(oponent:Sign) -> GameState {
         switch self {
         case .rock:
-            if Sign.ro
-            return
+            switch oponent{
+                case .rock:
+                return GameState.draw
+                case .paper:
+                return GameState.lose
+                case .scissors:
+                return GameState.win
+                default:
+                fatalError("Something get wrong")
+            }
+        case .paper:
+            switch oponent{
+                case .rock:
+                return GameState.win
+                case .paper:
+                return GameState.draw
+                case .scissors:
+                return GameState.lose
+                default:
+                fatalError("Something get wrong")
+             }
+        case .scissors:
+            switch oponent{
+                case .rock:
+                return GameState.lose
+                case .paper:
+                return GameState.win
+                case .scissors:
+                return GameState.draw
+                default:
+                fatalError("Something get wrong")
+            }
         default:
-            <#code#>
+            fatalError("Something get wrong")
         }
     }
 }
+
+var rockUser = Sign.rock
+var paperUser = Sign.paper
+var scissorsUSer = Sign.scissors
+
+print("Rock Vs Rock \(rockUser.giveMeAnOption(oponent:Sign.rock))")
+print("Rock Vs Paper \(rockUser.giveMeAnOption(oponent:Sign.paper))")
+print("Rock Vs Scissors \(rockUser.giveMeAnOption(oponent:Sign.scissors))")
+print("Paper Vs Rock \(paperUser.giveMeAnOption(oponent:Sign.rock))")
+print("Paper Vs Paper \(paperUser.giveMeAnOption(oponent:Sign.paper))")
+print("Paper Vs Scissors \(paperUser.giveMeAnOption(oponent:Sign.scissors))")
+print("Scissors Vs Rock \(scissorsUSer.giveMeAnOption(oponent:Sign.rock))")
+print("Scissors Vs Paper \(scissorsUSer.giveMeAnOption(oponent:Sign.paper))")
+print("Scissors Vs Scissors \(scissorsUSer.giveMeAnOption(oponent:Sign.scissors))")
