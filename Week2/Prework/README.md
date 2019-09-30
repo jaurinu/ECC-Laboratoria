@@ -169,3 +169,60 @@ Al inicio de cada sesión, haremos preguntas sobre el Prework. Les recomendamos 
    2. *¿Qué es una clase?*
 
       ​	Es la descripción de un conjunto de objetos similares; consta de métodos y de datos que resumen las características comunes de dicho conjunto.
+    
+   3.*¿Qué es un método?*
+
+      ​	Es una subrutina cuyo código es definido en una clase y puede pertenecer tanto a una clase como a un objeto.
+
+      ​	Una serie de sentencias para llevar a cabo una acción
+
+   4.*¿Qué es una propiedad?*
+
+      ​	Es un identificador con un determinado tipo de dato que accede normalmente a un un campo en forma directa a través de un método.
+
+8. Investiga y describe la arquitectura de diseño MVC. 
+
+    	Es un patrón de arquitectura de software, que separa los datos y la lógica de negocio de una aplicación *(modelo)* de su representación *(vista)* y el módulo encargado de gestionar los eventos y las comunicaciones *(controlador)*.
+
+   ​	Propone la construcción de tres componentes distintos que son el modelo, la vista y el controlador. Por un lado define componentes para la representación de la información y por otro lado para la interacción del usuario.
+
+   ​		El **modelo** es la representación de la información con la cual el sistema opera, por lo tanto gestiona todos los accesos a dicha información, tanto consultas como actualizaciones, implementado también los privilegios de acceso que se hayan descrito en las especificaciones de la aplicación.
+
+   ​		El **controlador**  actúa como intermediario entre el modelo y la vista,  gestionando el flujo de información entre ellos y las transformaciones para adaptar los datos a las necesidades de cada uno; responde a eventos e invoca peticiones al modelo.
+
+   ​		La **vista** o interfaz de usuario, que compone la información que se envía al cliente y los mecanismos de interacción con este.
+
+9. ¿Qué es un ViewController? Es el controlador, relaciona la vista con el modelo
+
+10. ¿Qué es un Storyboard? Son la forma recomendada por Apple de crear interfaces de usuario, contiene la representación gráfica de las pantallas (los controladores) que componen nuestra aplicación y de la relación entre ellas. Además el sistema se encarga automáticamente de moverse por las pantallas cuando suceden determinados eventos, instanciando los controladores y las vistas automáticamente.
+
+11. ¿Qué es un IBAction? Es como la palabra clave void, simplemente indica que el método es una acción y que se puede conectar con el storyboard Interface Builder (IB)
+
+12. ¿Qué es un IBOutlet? Los outlets son el modo de hacer referencia a los objetos de la interfaz. La palabra reservada IBOutlet le dice al Xcode que te puedes conectar a esa propiedad desde Interface Builder.
+
+13. ¿Qué es la notación CamelCase y cuáles son sus tipos? ¿Conoces otro tipo de notación?
+
+   ​	Es un estilo de escritura que se aplica a palabras compuestas.
+
+   ​			Tipos:
+
+   1. UpperCamelCase. Cuando la primera letra de cada una de las palabras es mayúscula
+
+   2. lowerCamelCase. lo mismo que UpperCamelCase con la excepción de que la primera letra es minúscula.
+
+      ​	Otros tipos de notación:
+
+      1. Snake Case. Cuando cada una de las palabras se separa por un guión bajo. ejemplo_de_snake_case
+      2. Kebab Case. Cuando cada una de las palabras se separa por un guión medio. ejemplo-de-kebab-case
+
+14. ¿Qué es un IDE y cuáles son sus elementos principales?
+
+   ​	Programas que tienen otros programas con las herramientas que nos permiten programar:
+
+   ​	-Editor de texto
+
+   ​	-Compilador
+
+   ​	-Intérprete
+
+   ​	-Depurador
