@@ -223,3 +223,104 @@ default:
     print("You did great!")
 }
 
+//FOR LOOPS
+//run some code repeatedly until a condition evaluates as false
+
+let count = 1...10
+for number in count {
+    print("Number is \(number)")
+}
+let albums = ["Red","1989", "Reputation"]
+for album in albums {
+    print("\(album) is on Apple Music")
+}
+//If you don't use the constant that for llops give you 
+//you should use an underscore instead
+print("Players gonna ")
+for _ in 1...5 {
+    print("play")
+}
+
+//WHILE: give it a condition to check, and its loop code will go around until 
+//the condition fails
+
+var number = 1
+while number <= 20 {
+    print(number)
+    number += 1
+}
+print("Ready or not, here I come!")
+
+//REPEAT LOOPS it´s identical to a while loop except the condition to check
+//comes at the end
+
+var number1 = 1
+repeat {
+    print(number1)
+    number1 += 1
+}while number1 <= 20
+print("Ready or not, here I come!")
+
+repeat {
+    print("This is false")
+} while false
+
+//EXITING LOOPS. you can exit a loop at any time using the break keyword
+
+var countDown = 10
+while countDown >= 0 {
+    print(countDown)
+    countDown -= 1
+}
+print("Blast off!")
+
+var countDown1 = 10
+while countDown1 >= 0 {
+    print(countDown1)
+
+    if countDown1 == 4 {
+        print("I'm bored. Let's go now!")
+        break
+    }
+    countDown1 -= 1
+}
+
+//EXITING MULTIPLE LOOPS if we want to break two nested loop at the same time
+//we use outerLoop
+
+outerLoop: for i in 1...10 {
+    for j in 1...10 {
+        let product = i * j
+        print ("\(i) * \(j) is \(product)")
+//add the condition inside the inner loop, then use break outerLoop
+        if product == 50 {
+            print("It's a bullseye!")
+            break outerLoop
+        }
+    }   
+}
+
+//SKIPPING ITEMS break exits a loop, if you just want to skip the current
+//item and continue on to the next one, you sould use continue instead.
+
+for i in 1...10 {
+    if i % 2 == 1 {
+        continue
+    }
+    print(i)
+}
+
+//INFINITE LOOPS - we use while to make infinite loops
+//to make one, use true as your condition, true is always true so the loop 
+//will repeat forever.
+
+var counter = 0
+
+while true {
+    print(" ")
+    counter += 1
+
+    if counter == 273 {
+        break
+    }
+}
