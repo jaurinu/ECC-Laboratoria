@@ -111,3 +111,115 @@ enum Planet: Int {
 
 let earth = Planet(rawValue: 2)
 print(earth) 
+
+//Arithmetic operators
+
+let firstScore = 12
+let secondScore = 4
+let total = firstScore + secondScore
+let difference = firstScore - secondScore
+let product = firstScore * secondScore
+let divided = firstScore / secondScore
+let remainder = 13 % secondScore
+print(total)
+print(difference)
+print(product)
+print(divided)
+print(remainder)
+
+//OPERATOR OVERLOADING Swift supports operator overloading
+//Swift is a type-safe language
+let meaningOfLife = 42
+let doubleMeaning = 42 + 42
+print(doubleMeaning)
+let fakers = "Fakers gonna "
+let action = fakers + "fake"
+print(action)
+let firstHalf = ["John", "Paul"]
+let secondHalf = ["George", "Ringo"]
+let beatles = firstHalf + secondHalf
+print(beatles)
+
+//Compound assignment operators
+//Shorthand operator that combine one operator with an assignment, so you can change a variable in place
+// +=, -=, *=, /= they assign the result back to whatever variable you were using
+
+var score = 95
+score -= 5
+print(score)
+
+var quote = "The rain in Spain falls mainly on the "
+quote += "Spaniards"
+print(quote)
+
+//Comparison operators
+
+let firstScore1 = 6
+let secondScore1 = 4
+//== check for equality
+//!= (not equals) checks two values are note the same
+print(firstScore == secondScore)
+print(firstScore != secondScore)
+print(firstScore < secondScore)
+print(firstScore >= secondScore)
+//Strings have a natural alphabetical order
+print("Taylor" <= "Swift")
+
+//Conditions
+
+let firstCard = 11
+let secondCard = 10
+
+if firstCard + secondCard == 2 {
+    print("Aces - lucky!")
+}else if firstCard + secondCard == 21 {
+    print("Blackjack!")
+}else {
+    print("Regular cards")
+}
+
+//COMBINING CONDITIONS && and || or
+
+let age1 = 12
+let age2 = 21
+if age1 > 18 && age2 > 18 {
+    print("Both are over 18")
+}
+if age1 > 18 || age2 > 18 {
+    print("One of them is over 18")
+}
+
+//THE TERNARY OPERATOR
+
+let firstCard1 = 11
+let secondCard1 = 10
+print(firstCard1 == secondCard1 ? "Cards are the same" : "Cards are different")
+
+//SWITCH STATEMENTS 
+
+let weather = "sunny"
+
+switch weather {
+case "rain":
+    print("Bring an umbrella")
+case "snow":
+    print("Wrap up warm")
+case "sunny":
+    print("Wear sunscreen")
+default:
+   print("Enjoy your day!")
+}
+
+//RANGE OPERATORS  ..< ...<
+
+let score1 = 85
+
+switch score1 {
+case 0..<50:
+    print("You failed badly")
+case 50..<85:
+    print("You did OK")
+default:
+    print("You did great!")
+}
+
