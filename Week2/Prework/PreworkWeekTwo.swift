@@ -324,3 +324,111 @@ while true {
         break
     }
 }
+
+//FUNCTIONS
+
+func printHelp() {
+    let message = """
+    Welcome to MyApp!
+
+    Run this app inside a directory of images and
+    MyApp will resize them all into thumbnails
+    """
+
+    print(message)
+}
+printHelp()
+
+//ACCEPTING PARAMETERS
+
+func square(number: Int) {
+    print(number * number)
+}
+square(number: 8)
+
+//RETURNING VALUES
+//as receiving data, functions can also send back data
+//to do this write a dash then a right angle bracket after your function's parameter list
+//inside the function use the return keyword
+
+func square1(number: Int) -> Int {
+    return number * number
+}
+let result = square1(number: 9)
+print(result)
+//if you need to return multiple values, this is a perfect example
+//of when to use tuples
+
+//PARAMETER LABELS
+//Swift let us provide two names for each parameter, one to be used externally when calling the function,
+//and one to be used internally inside the function.
+
+func sayHello(to name: String) {
+    print("Hello, \(name)!")
+}
+print(sayHello(to: "Taylor"))
+
+//OMITTING PARAMETER LABELS
+//Use underscore _ for your external parameter name
+
+func greet(_ person: String) {
+    print("Hello, \(person)!")
+}
+print(greet("Taylor"))
+
+//DEFAULT PARAMETERS
+
+func greet1(_ person: String, nicely: Bool = true) {
+    if nicely == true {
+        print("Hello, \(person)!")
+    } else {
+        print("Oh no, it's \(person) again...")
+    }
+}
+greet1("Taylor")
+greet1("Taylor", nicely: false)
+
+//VARIADIC FUNCTIONS
+//Some functions accept any number of parameters of the same type, for example print() function
+print("Haters", "gonna", "hate")
+
+//You can make any parameter variadic by writing ... after its type
+//Inside the function, Swift converts the values that were passed in to an array of integers, so you can loop over
+//them as needed
+
+func square2(numbers: Int...) {
+    for number in numbers {
+        print("\(number) squared is \(number * number)")
+    }
+}
+
+square2(numbers: 1, 2, 3, 4, 5)
+
+//WRITING THROWING FUNCTIONS AND RUNNING
+
+enum PasswordError: Error {
+    case obvious
+}
+func checkPassword(_ password: String) throws -> Bool {
+    if password == "password" {
+        throw PasswordError.obvious
+    }
+    return true
+}
+do {
+    try checkPassword("password")
+    print("That password is good!")
+}catch {
+    print("You can't use that password.")
+}
+
+//INOUT PARAMETERS
+//all parameters into a Swift function are constants
+//they can be changed if you pass as inout
+
+func dobleInPlace(number: inout Int) {
+    number *= 2
+}
+
+var myNum = 10
+print(dobleInPlace(number: &myNum))
