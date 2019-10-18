@@ -67,8 +67,8 @@ Entra a https://developer.apple.com/documentation/ y contesta:
 
 1. ¿Qué es UIKit?
 
-   Es un framework para diseñar páginas web
-
+   Es un framework para diseñar aplicaciones iOS
+   
 2. Lee todos los kits de desarrollo de Apple y enlista 3 que te hayan llamado la atención
  HomeKit-para comunicarse, configurar y controlar la automatización de los accesorios de la casa.
  HealthKit- para acceder y compartir datos de salud manteniendo la privacía del usuario.
