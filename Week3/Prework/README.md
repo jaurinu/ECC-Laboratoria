@@ -81,4 +81,4 @@ Sus clases deben ser reusables, es decir, no deberían depender de ningún tipo 
  https://oleb.net/blog/2012/02/app-launch-sequence-ios-revisited/
  
  https://oleb.net/media/xcode-4-2-app-launch-sequence.png
- 
+
